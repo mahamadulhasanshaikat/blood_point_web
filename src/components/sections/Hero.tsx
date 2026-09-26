@@ -1,20 +1,23 @@
 'use client';
 
-import { useState } from 'react';
-import { Droplets, ShieldCheck, Sparkles, CheckCircle2, ArrowRight } from 'lucide-react';
+import { 
+  Droplets, 
+  Sparkles, 
+  CheckCircle2, 
+  ArrowRight
+} from 'lucide-react';
 
 export function Hero() {
-  const [isAvailable, setIsAvailable] = useState(true);
-
   return (
-    <section className="relative pt-36 pb-24 overflow-hidden">
-      <div className="absolute top-12 left-1/2 -translate-x-1/2 w-[700px] h-[500px] bg-gradient-to-tr from-red-200/40 via-rose-100/30 to-transparent rounded-full blur-3xl -z-10 pointer-events-none" />
+    <section className="relative pt-36 pb-24 overflow-hidden bg-[#FDFDFE]">
+      {/* Background Ambient Glow */}
+      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-187.5 h-137.5 bg-gradient-to-tr from-red-200/40 via-rose-100/30 to-transparent rounded-full blur-3xl -z-10 pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-12 gap-12 lg:gap-8 items-center">
           
-          {/* Left Details */}
-          <div className="lg:col-span-7 text-center lg:text-left">
+          {/* ================= বাম পাশ: হেডিং, টেক্সট ও অ্যাকশন ================= */}
+          <div className="lg:col-span-6 text-center lg:text-left z-10">
             <div className="inline-flex items-center gap-2 bg-rose-50/90 border border-rose-200/70 text-red-700 text-xs font-bold px-4 py-1.5 rounded-full mb-6 shadow-xs backdrop-blur-md transition-transform duration-300 hover:scale-105">
               <Sparkles className="w-3.5 h-3.5 text-red-600 animate-pulse" />
               Bangladesh&apos;s Fastest Voluntary Blood Network
@@ -29,10 +32,9 @@ export function Hero() {
             </h1>
 
             <p className="mt-6 text-base sm:text-lg text-slate-600 font-normal leading-relaxed max-w-xl mx-auto lg:mx-0">
-              Bridge the critical communication gap between voluntary donors and emergency patients through intelligent geo-fencing, 90-day medical safety cooldown, and instant push broadcasting.
+              Emergency blood requests matched instantly with verified voluntary donors across all 8 major blood groups nationwide.
             </p>
 
-            {/* CTAs */}
             <div className="mt-8 flex flex-col sm:flex-row items-center gap-4 justify-center lg:justify-start">
               <a
                 href="https://play.google.com/store/apps"
@@ -63,79 +65,93 @@ export function Hero() {
                 <CheckCircle2 className="w-4 h-4 text-emerald-500" /> 100% Free & Non-Profit
               </span>
               <span className="flex items-center gap-1.5">
-                <CheckCircle2 className="w-4 h-4 text-emerald-500" /> Zero Data Selling
+                <CheckCircle2 className="w-4 h-4 text-emerald-500" /> All 8 Blood Groups Supported
               </span>
             </div>
           </div>
 
-          {/* Right Floating Card */}
-          <div className="lg:col-span-5 flex justify-center">
-            <div className="relative mx-auto max-w-sm w-full select-none animate-float">
-              <div className="absolute -inset-2 bg-gradient-to-r from-red-600 to-rose-600 rounded-[32px] blur-2xl animate-glow" />
-
-              <div className="relative bg-gradient-to-br from-[#E52D27] to-[#B31217] rounded-[26px] p-6 text-white shadow-2xl overflow-hidden border border-white/20 transition-transform duration-300 hover:scale-[1.01]">
-                <Droplets className="absolute -right-6 -bottom-6 w-44 h-44 text-white/5 pointer-events-none rotate-12" />
-
-                <div className="flex justify-between items-start">
-                  <div>
-                    <div className="inline-flex items-center gap-1.5 bg-white/20 backdrop-blur-md px-2.5 py-1 rounded-full text-[10px] font-bold tracking-wider uppercase text-white/90">
-                      <Droplets className="w-3.5 h-3.5 fill-white" />
-                      Blood Group
-                    </div>
-                    <div className="text-5xl font-black mt-2 tracking-tight">O+</div>
-                  </div>
-
-                  <div className="inline-flex items-center gap-1 bg-white/15 backdrop-blur-md px-3 py-1.5 rounded-full border border-white/20 text-xs font-semibold">
-                    <ShieldCheck className="w-3.5 h-3.5 text-emerald-300" />
-                    Verified Donor
+          {/* ================= ডান পাশ: ৩টি পারফেক্ট কনসেন্ট্রিক রিং অরবিট ================= */}
+          <div className="lg:col-span-6 flex justify-center items-center relative min-h-125 sm:min-h-140">
+            <div className="relative w-85 h-85 sm:w-125 sm:h-125 flex items-center justify-center select-none orbit-container">
+              
+              {/* রিং ১: বাইরের অরবিট (O+, O-, A+) */}
+              <div className="absolute inset-0 rounded-full border border-dashed border-red-200/80 pointer-events-none" />
+              <div className="absolute inset-0 rounded-full orbit-layer animate-orbit-1">
+                <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2">
+                  <div className="orbit-layer animate-anti-1 flex items-center justify-center w-12 h-12 rounded-full bg-linear-to-tr from-red-600 to-rose-500 text-white font-black text-sm shadow-xl shadow-red-500/40 border-2 border-white transition-all duration-300 hover:scale-125 cursor-pointer">
+                    O+
                   </div>
                 </div>
-
-                <div className="grid grid-cols-3 gap-2 bg-black/20 backdrop-blur-md border border-white/10 rounded-2xl p-3 my-5 text-center">
-                  <div>
-                    <div className="text-base font-extrabold">12</div>
-                    <div className="text-[10px] text-white/70 font-medium mt-0.5">Donations</div>
-                  </div>
-                  <div className="border-x border-white/15">
-                    <div className="text-base font-extrabold text-amber-300">36+</div>
-                    <div className="text-[10px] text-white/70 font-medium mt-0.5">Lives Saved</div>
-                  </div>
-                  <div>
-                    <div className={`text-base font-extrabold ${isAvailable ? 'text-emerald-300' : 'text-orange-300'}`}>
-                      {isAvailable ? 'Ready' : 'Resting'}
-                    </div>
-                    <div className="text-[10px] text-white/70 font-medium mt-0.5">Eligibility</div>
+                <div className="absolute top-1/2 right-0 translate-x-1/2 -translate-y-1/2">
+                  <div className="orbit-layer animate-anti-1 flex items-center justify-center w-11 h-11 rounded-full bg-slate-900 text-rose-400 font-black text-xs shadow-lg border-2 border-white transition-all duration-300 hover:scale-125 cursor-pointer">
+                    O-
                   </div>
                 </div>
-
-                <div className="flex items-center justify-between bg-white/10 backdrop-blur-md px-3.5 py-2.5 rounded-2xl border border-white/10">
-                  <div className="flex items-center gap-2">
-                    <span
-                      className={`h-2.5 w-2.5 rounded-full transition-colors duration-300 ${
-                        isAvailable ? 'bg-emerald-400 shadow-[0_0_8px_#34d399]' : 'bg-white/40'
-                      }`}
-                    />
-                    <span className="text-xs font-bold text-white/95">
-                      {isAvailable ? 'Ready to Donate Blood' : 'Safety Cooldown Active'}
-                    </span>
+                <div className="absolute bottom-6 left-1/4 -translate-x-1/2">
+                  <div className="orbit-layer animate-anti-1 flex items-center justify-center w-11 h-11 rounded-full bg-white text-red-600 font-black text-xs shadow-lg border border-red-100 transition-all duration-300 hover:scale-125 cursor-pointer">
+                    A+
                   </div>
-
-                  <button
-                    type="button"
-                    aria-label="Toggle donor availability"
-                    onClick={() => setIsAvailable(!isAvailable)}
-                    className={`w-11 h-6 flex items-center rounded-full p-1 cursor-pointer transition-colors duration-300 ${
-                      isAvailable ? 'bg-emerald-400' : 'bg-white/30'
-                    }`}
-                  >
-                    <div
-                      className={`bg-white w-4 h-4 rounded-full shadow-md transform transition-transform duration-300 ${
-                        isAvailable ? 'translate-x-5' : 'translate-x-0'
-                      }`}
-                    />
-                  </button>
                 </div>
               </div>
+
+              {/* রিং ২: মধ্যবর্তী অরবিট (B+, A-, B-) */}
+              <div className="absolute w-60 h-60 sm:w-85 sm:h-85 rounded-full border border-red-100 pointer-events-none" />
+              <div className="absolute w-60 h-60 sm:w-85 sm:h-85 rounded-full orbit-layer animate-orbit-2">
+                <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2">
+                  <div className="orbit-layer animate-anti-2 flex items-center justify-center w-11 h-11 rounded-full bg-white text-red-600 font-black text-xs shadow-md border border-rose-200 transition-all duration-300 hover:scale-125 cursor-pointer">
+                    B+
+                  </div>
+                </div>
+                <div className="absolute top-1/2 right-0 translate-x-1/2 -translate-y-1/2">
+                  <div className="orbit-layer animate-anti-2 flex items-center justify-center w-10 h-10 rounded-full bg-slate-950 text-white font-black text-xs shadow-md border border-slate-700 transition-all duration-300 hover:scale-125 cursor-pointer">
+                    A-
+                  </div>
+                </div>
+                <div className="absolute bottom-2 left-1/4 -translate-x-1/2">
+                  <div className="orbit-layer animate-anti-2 flex items-center justify-center w-10 h-10 rounded-full bg-slate-950 text-white font-black text-xs shadow-md border border-slate-700 transition-all duration-300 hover:scale-125 cursor-pointer">
+                    B-
+                  </div>
+                </div>
+              </div>
+
+              {/* রিং ৩: ভেতরের অরবিট (AB+, AB-) */}
+              <div className="absolute w-35 h-35 sm:w-50 sm:h-50 rounded-full border border-dashed border-rose-300/60 pointer-events-none" />
+              <div className="absolute w-35 h-35 sm:w-50 sm:h-50 rounded-full orbit-layer animate-orbit-3">
+                <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2">
+                  <div className="orbit-layer animate-anti-3 flex items-center justify-center w-10 h-10 rounded-full bg-white text-rose-600 font-black text-[11px] shadow-md border border-rose-200 transition-all duration-300 hover:scale-125 cursor-pointer">
+                    AB+
+                  </div>
+                </div>
+                <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2">
+                  <div className="orbit-layer animate-anti-3 flex items-center justify-center w-9 h-9 rounded-full bg-slate-900 text-rose-300 font-black text-[10px] shadow-md border border-slate-800 transition-all duration-300 hover:scale-125 cursor-pointer">
+                    AB-
+                  </div>
+                </div>
+              </div>
+
+             {/* Central Core Hub (Compact Size) */}
+<div className="relative z-20 flex flex-col items-center justify-center">
+  <div className="absolute -inset-2 bg-red-600/20 rounded-full blur-xl animate-pulse pointer-events-none" />
+
+  {/* w-16 h-16 (mobile) ebong sm:w-20 sm:h-20 (desktop) kore size komano hoyeche */}
+  <div className="relative w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-gradient-to-tr from-[#B31217] via-[#E52D27] to-rose-500 text-white shadow-xl shadow-red-600/40 flex flex-col items-center justify-center border-2 border-white/50 transform transition-all duration-300 hover:scale-105">
+    <Droplets className="w-5 h-5 sm:w-7 sm:h-7 fill-white drop-shadow-md animate-pulse" />
+    <span className="text-[8px] sm:text-[9px] font-black uppercase tracking-wider mt-0.5 text-white">
+      Blood Point
+    </span>
+    <span className="text-[7px] font-bold text-rose-200 uppercase tracking-widest leading-none">
+      Network
+    </span>
+  </div>
+
+  {/* Bottom Telemetry Status Pill choto kora hoyeche
+  <div className="absolute -bottom-6 inline-flex items-center gap-1 bg-white/95 backdrop-blur-md border border-slate-200/90 px-2 py-0.5 rounded-full shadow-sm">
+    <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-ping" />
+    <span className="text-[8px] font-extrabold text-slate-800 tracking-tight">
+      Direct DB Telemetry
+    </span>
+  </div> */}
+</div>
             </div>
           </div>
 
@@ -144,3 +160,5 @@ export function Hero() {
     </section>
   );
 }
+
+export default Hero;

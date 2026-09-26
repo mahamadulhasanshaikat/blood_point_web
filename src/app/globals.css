@@ -8,6 +8,11 @@
   }
 }
 
+/* ==========================================================================
+   ১. মূল কিফ্রেমসমূহ (Core Keyframes)
+   ========================================================================== */
+
+/* কার্ডের জন্য ফ্লোটিং অ্যানিমেশন */
 @keyframes floatCard {
   0%, 100% {
     transform: translateY(0px) rotate(0deg);
@@ -17,6 +22,7 @@
   }
 }
 
+/* সফট রেড পালস গ্লো */
 @keyframes pulseGlow {
   0%, 100% {
     opacity: 0.3;
@@ -28,11 +34,97 @@
   }
 }
 
+/* ইনফিনিট মারকুই ব্যানার */
 @keyframes marquee {
-  0% { transform: translateX(0%); }
-  100% { transform: translateX(-50%); }
+  0% { 
+    transform: translateX(0%); 
+  }
+  100% { 
+    transform: translateX(-50%); 
+  }
 }
 
+/* ৩৬০° অরবিট ক্লকওয়াইজ স্পিন */
+@keyframes orbitCW {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* নোডের টেক্সট সোজা রাখার অ্যান্টি-রোটেশন (কাউন্টার ক্লকওয়াইজ) */
+@keyframes antiRotateCW {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(-360deg);
+  }
+}
+
+/* কাউন্টার ক্লকওয়াইজ স্পিন (রিভার্স রিংয়ের জন্য) */
+@keyframes orbitCCW {
+  from {
+    transform: rotate(360deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
+
+/* রিভার্স রিংয়ের নোডের টেক্সট সোজা রাখার অ্যান্টি-রোটেশন */
+@keyframes antiRotateCCW {
+  from {
+    transform: rotate(-360deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
+
+/* ==========================================================================
+   ২. পারফরম্যান্স ও ইউটিলিটি ক্লাসসমূহ (Hardware-Accelerated Classes)
+   ========================================================================== */
+
+/* GPU Layer Setup */
+.orbit-layer {
+  will-change: transform;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+}
+
+/* ব্যবহারকারী মাউস রাখলে সম্পূর্ণ অরবিট মসৃণভাবে থেমে যাবে */
+.orbit-container:hover .orbit-layer {
+  animation-play-state: paused !important;
+}
+
+/* রিং ১: বাইরের অরবিট (ঘড়ির কাঁটার দিকে) */
+.animate-orbit-1 {
+  animation: orbitCW 48s linear infinite;
+}
+.animate-anti-1 {
+  animation: antiRotateCW 48s linear infinite;
+}
+
+/* রিং ২: মধ্যবর্তী অরবিট (ঘড়ির কাঁটার বিপরীত দিকে) */
+.animate-orbit-2 {
+  animation: orbitCCW 32s linear infinite;
+}
+.animate-anti-2 {
+  animation: antiRotateCCW 32s linear infinite;
+}
+
+/* রিং ৩: ভেতরের দ্রুত অরবিট (ঘড়ির কাঁটার দিকে) */
+.animate-orbit-3 {
+  animation: orbitCW 20s linear infinite;
+}
+.animate-anti-3 {
+  animation: antiRotateCW 20s linear infinite;
+}
+
+/* সাধারণ ইউটিলিটি অ্যানিমেশনসমূহ */
 .animate-float {
   animation: floatCard 5s ease-in-out infinite;
   will-change: transform;
@@ -47,4 +139,5 @@
   display: flex;
   width: 200%;
   animation: marquee 25s linear infinite;
+  will-change: transform;
 }

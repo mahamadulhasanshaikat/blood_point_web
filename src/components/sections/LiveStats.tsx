@@ -130,7 +130,7 @@ export function LiveStats() {
     },
     {
       label: 'Lives Saved',
-      value: data.isLoading ? '...' : `${formatDisplay(livesAnimated)}+`,
+      value: data.isLoading ? '...' : `${formatDisplay(livesAnimated)}`,
       subtext: 'Completed transfusions',
       icon: Heart,
       color: 'text-red-600 bg-red-50 border-red-100',

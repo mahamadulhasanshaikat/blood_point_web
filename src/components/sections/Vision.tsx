@@ -1,53 +1,92 @@
-import { Globe, Mail, Code2, Award } from 'lucide-react';
+import { Globe, Mail, Code2, Award, HeartHandshake, Eye } from 'lucide-react';
 
 export function Vision() {
   return (
     <section id="vision" className="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div className="bg-slate-950 text-white rounded-[36px] p-8 sm:p-14 shadow-2xl relative overflow-hidden border border-slate-800">
-        <div className="grid lg:grid-cols-12 gap-10 items-center">
+        
+        {/* ব্যাকগ্রাউন্ড অ্যারোমা গ্লো */}
+        <div className="absolute -right-20 -top-20 w-80 h-80 bg-red-600/10 rounded-full blur-3xl pointer-events-none" />
+
+        <div className="grid lg:grid-cols-12 gap-10 items-center relative z-10">
+          
+          {/* বাম পাশ: মিশন ও রূপকল্প */}
           <div className="lg:col-span-7 space-y-6">
             <div className="inline-flex items-center gap-2 bg-white/10 px-3.5 py-1.5 rounded-full text-xs font-bold text-red-400 uppercase tracking-wider">
               <Award className="w-3.5 h-3.5" />
-              Our Commitment
+              Our Commitment • আমাদের প্রতিশ্রুতি
             </div>
 
-            <div>
-              <h3 className="text-base font-bold text-red-400 mb-1">Our Mission / আমাদের লক্ষ্য</h3>
+            {/* মিশন */}
+            <div className="bg-white/[0.03] p-5 rounded-2xl border border-white/5 space-y-2">
+              <div className="flex items-center gap-2">
+                <HeartHandshake className="w-4 h-4 text-red-400 shrink-0" />
+                <h3 className="text-base font-bold text-red-400">Our Mission • আমাদের লক্ষ্য</h3>
+              </div>
               <p className="text-slate-300 text-sm leading-relaxed">
                 To bridge the communication gap between voluntary blood donors and emergency patients in seconds through intelligent geolocation, zero data commercialization, and verified donor tracking.
               </p>
+              <p className="text-slate-400 text-xs sm:text-sm leading-relaxed pt-1 border-t border-white/5 font-medium">
+                জরুরি রক্তের প্রয়োজনে রোগী ও রক্তদাতার মধ্যকার যোগাযোগের দূরত্ব দূর করা। সম্পূর্ণ বিনামূল্যে ও নিরাপদ প্রযুক্তির মাধ্যমে সঠিক সময়ে সঠিক রক্তদাতাকে খুঁজে দেওয়াই আমাদের মূল লক্ষ্য।
+              </p>
             </div>
 
-            <div>
-              <h3 className="text-base font-bold text-red-400 mb-1">Our Vision / আমাদের রূপকল্প</h3>
+            {/* ভিশন */}
+            <div className="bg-white/[0.03] p-5 rounded-2xl border border-white/5 space-y-2">
+              <div className="flex items-center gap-2">
+                <Eye className="w-4 h-4 text-red-400 shrink-0" />
+                <h3 className="text-base font-bold text-red-400">Our Vision • আমাদের রূপকল্প</h3>
+              </div>
               <p className="text-slate-300 text-sm leading-relaxed">
                 A nationwide healthcare future where no human life is lost due to the lack or delay of emergency blood supply across 64 districts in Bangladesh.
+              </p>
+              <p className="text-slate-400 text-xs sm:text-sm leading-relaxed pt-1 border-t border-white/5 font-medium">
+                বাংলাদেশের ৬৪টি জেলার কোনো হাসপাতালেই যেন রক্তের অভাবে বা খুঁজতে গিয়ে দেরির কারণে একটি মূল্যবান প্রাণও ঝরে না যায়—এমন একটি সচেতন ও মানবিক বাংলাদেশ গড়ে তোলা।
               </p>
             </div>
           </div>
 
-          <div className="lg:col-span-5 bg-white/5 backdrop-blur-md rounded-2xl p-6 border border-white/10 space-y-4">
-            <h4 className="text-xs font-bold uppercase tracking-wider text-slate-400">Official Channels & Meta</h4>
-
-            <div className="flex items-center gap-3 text-xs text-slate-300">
-              <Globe className="w-4 h-4 text-red-400 shrink-0" />
-              <span>Official Portal: <strong>bloodpoint.org</strong></span>
+          {/* ডান পাশ: চ্যানেল ও মেটা কার্ড */}
+          <div className="lg:col-span-5 bg-white/5 backdrop-blur-md rounded-3xl p-6 sm:p-8 border border-white/10 space-y-5">
+            <div>
+              <h4 className="text-xs font-bold uppercase tracking-wider text-slate-400">Official Channels & Meta</h4>
+              <p className="text-[11px] text-slate-500 mt-0.5">অফিসিয়াল তথ্য ও যোগাযোগ</p>
             </div>
 
-            <div className="flex items-center gap-3 text-xs text-slate-300">
-              <Mail className="w-4 h-4 text-red-400 shrink-0" />
-              <span>Contact: <strong>contact@bloodpoint.org</strong></span>
+            <div className="space-y-3.5">
+              <div className="flex items-center gap-3 text-xs text-slate-300">
+                <Globe className="w-4 h-4 text-red-400 shrink-0" />
+                <div>
+                  <span className="text-slate-400 block text-[10px]">অফিসিয়াল পোর্টাল</span>
+                  <span className="font-semibold text-white">bloodpoint.org</span>
+                </div>
+              </div>
+
+              <div className="flex items-center gap-3 text-xs text-slate-300">
+                <Mail className="w-4 h-4 text-red-400 shrink-0" />
+                <div>
+                  <span className="text-slate-400 block text-[10px]">ইমেইল যোগাযোগ</span>
+                  <a href="mailto:contact@bloodpoint.org" className="font-semibold text-white hover:text-red-400 transition-colors">
+                    contact@bloodpoint.org
+                  </a>
+                </div>
+              </div>
+
+              <div className="flex items-center gap-3 text-xs text-slate-300">
+                <Code2 className="w-4 h-4 text-red-400 shrink-0" />
+                <div>
+                  <span className="text-slate-400 block text-[10px]">প্রযুক্তিগত পরিচালনা</span>
+                  <span className="font-semibold text-white">MHS Tech Labs</span>
+                </div>
+              </div>
             </div>
 
-            <div className="flex items-center gap-3 text-xs text-slate-300">
-              <Code2 className="w-4 h-4 text-red-400 shrink-0" />
-              <span>Lead Engineering: <strong>MHS Tech Labs</strong></span>
-            </div>
-
-            <div className="pt-2 border-t border-white/10 text-[11px] text-slate-400">
-              Version 1.0.0 (Production) • Public Welfare
+            <div className="pt-3 border-t border-white/10 flex items-center justify-between text-[11px] text-slate-400">
+              <span>Version 1.0.0 (Production)</span>
+              <span className="text-emerald-400 font-semibold">• ১০০% জনকল্যাণমূলক</span>
             </div>
           </div>
+
         </div>
       </div>
     </section>
