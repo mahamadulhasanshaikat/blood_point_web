@@ -118,7 +118,7 @@ export default function DownloadModal({ isOpen, onClose }: DownloadModalProps) {
               href="/blood-point.apk"
               download="blood-point.apk"
               onClick={onClose}
-              className="flex-1 flex items-center justify-center gap-2 bg-gradient-to-r from-red-600 to-rose-600 hover:from-red-700 hover:to-rose-700 text-white px-6 py-3.5 rounded-2xl font-bold text-sm transition-all duration-200 shadow-lg shadow-red-500/25 active:translate-y-0.5"
+              className="flex-1 flex items-center justify-center gap-2 bg-linear-to-r from-red-600 to-rose-600 hover:from-red-700 hover:to-rose-700 text-white px-6 py-3.5 rounded-2xl font-bold text-sm transition-all duration-200 shadow-lg shadow-red-500/25 active:translate-y-0.5"
             >
               <Download className="w-4 h-4" />
               <span>সরাসরি APK ডাউনলোড করুন</span>

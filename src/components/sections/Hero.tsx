@@ -16,7 +16,7 @@ export function Hero() {
   return (
     <section className="relative pt-36 pb-24 overflow-hidden bg-[#FDFDFE]">
       {/* Background Ambient Glow */}
-      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-187.5 h-137.5 bg-gradient-to-tr from-red-200/40 via-rose-100/30 to-transparent rounded-full blur-3xl -z-10 pointer-events-none" />
+      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-187.5 h-137.5 bg-linear-to-tr from-red-200/40 via-rose-100/30 to-transparent rounded-full blur-3xl -z-10 pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-12 gap-12 lg:gap-8 items-center">
