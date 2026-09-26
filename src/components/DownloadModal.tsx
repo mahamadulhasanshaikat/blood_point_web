@@ -8,7 +8,6 @@ import {
   Smartphone, 
   Cpu, 
   HardDrive, 
-  ExternalLink,
   Info
 } from "lucide-react";
 
@@ -47,7 +46,7 @@ export default function DownloadModal({ isOpen, onClose }: DownloadModalProps) {
       <div className="relative w-full max-w-lg bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 rounded-3xl p-6 sm:p-8 shadow-2xl z-10 overflow-hidden animate-in zoom-in-95 duration-200">
         
         {/* টপ ব্যাকগ্রাউন্ড অ্যাম্বিয়েন্ট গ্লো */}
-        <div className="absolute top-0 right-0 -mr-16 -mt-16 w-48 h-48 bg-gradient-to-br from-red-500/15 via-rose-500/10 to-transparent rounded-full blur-2xl pointer-events-none" />
+        <div className="absolute top-0 right-0 -mr-16 -mt-16 w-48 h-48 bg-linear-to-br from-red-500/15 via-rose-500/10 to-transparent rounded-full blur-2xl pointer-events-none" />
 
         {/* ক্লোজ বাটন */}
         <button
