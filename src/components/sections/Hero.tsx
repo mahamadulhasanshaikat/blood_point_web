@@ -8,7 +8,7 @@ import {
   ArrowRight,
   Download
 } from 'lucide-react';
-import DownloadModal from '@/components/DownloadModal';
+import DownloadModal from '../DownloadModal';
 
 export function Hero() {
   const [isDownloadOpen, setIsDownloadOpen] = useState(false);
