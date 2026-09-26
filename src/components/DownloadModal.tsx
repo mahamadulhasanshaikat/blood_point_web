@@ -45,13 +45,13 @@ export default function DownloadModal({ isOpen, onClose }: DownloadModalProps) {
       {/* মডাল কার্ড */}
       <div className="relative w-full max-w-lg bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 rounded-3xl p-6 sm:p-8 shadow-2xl z-10 overflow-hidden animate-in zoom-in-95 duration-200">
         
-        {/* টপ ব্যাকগ্রাউন্ড অ্যাম্বিয়েন্ট গ্লো */}
-        <div className="absolute top-0 right-0 -mr-16 -mt-16 w-48 h-48 bg-linear-to-br from-red-500/15 via-rose-500/10 to-transparent rounded-full blur-2xl pointer-events-none" />
+        {/* টপ ব্যাকগ্রাউন্ড অ্যাম্বিয়েন্ট গ্লো */}
+        <div className="absolute top-0 right-0 -mr-16 -mt-16 w-48 h-48 bg-gradient-to-br from-red-500/15 via-rose-500/10 to-transparent rounded-full blur-2xl pointer-events-none" />
 
         {/* ক্লোজ বাটন */}
         <button
           onClick={onClose}
-          className="absolute top-5 right-5 p-2 rounded-full text-slate-400 hover:text-slate-700 dark:hover:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 transition-all"
+          className="absolute top-5 right-5 p-2 rounded-full text-slate-400 hover:text-slate-700 dark:hover:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 transition-all cursor-pointer"
           aria-label="Close modal"
         >
           <X className="w-5 h-5" />
@@ -72,6 +72,9 @@ export default function DownloadModal({ isOpen, onClose }: DownloadModalProps) {
               <h3 className="text-xl font-extrabold text-slate-900 dark:text-white tracking-tight">
                 Blood Point Mobile App
               </h3>
+              <p className="text-xs text-slate-500 dark:text-slate-400 font-mono">
+                Package: com.mhstechlabs.blood_point
+              </p>
             </div>
           </div>
         </div>
@@ -105,20 +108,21 @@ export default function DownloadModal({ isOpen, onClose }: DownloadModalProps) {
             <span>ইনস্টল করার নিয়মাবলী:</span>
           </div>
           <ul className="text-xs text-slate-600 dark:text-slate-300 space-y-1.5 list-disc list-inside leading-relaxed pl-1">
-            <li>APK ডাউনলোড সম্পন্ন হলে ফাইলে চাপ দিয়ে ইনস্টল করুন।</li>
-            <li>ফোনে <strong>&quot;Install unknown apps&quot;</strong> নোটিশ দেখালে সেটিংসে গিয়ে ব্রাউজারটিকে <strong>Allow</strong> করুন।</li>
-            <li>সম্পূর্ণ নিজস্ব সার্ভার থেকে ভেরিফাইড প্যাকেজ হওয়ায় এটি শতভাগ নিরাপদ।</li>
+            <li>APK ডাউনলোড সম্পন্ন হলে নোটিফিকেশন বা ফাইল ম্যানেজার থেকে ফাইলে চাপ দিয়ে ইনস্টল করুন।</li>
+            <li>ফোনে <strong>&quot;Install unknown apps&quot;</strong> সিকিউরিটি নোটিশ দেখালে সেটিংসে গিয়ে ব্রাউজারটিকে <strong>Allow</strong> করুন।</li>
+            <li>সম্পূর্ণ নিজস্ব সার্ভার থেকে ভেরিফাইড প্যাকেজ হওয়ায় এটি ডিভাইসের জন্য শতভাগ নিরাপদ।</li>
           </ul>
         </div>
 
-        {/* সিকিউরিটি ব্যাজ ও অ্যাকশন বাটনসমূহ */}
+        {/* সিকিউরিটি ব্যাজ ও ডাউনলোড অ্যাকশন বাটনসমূহ */}
         <div className="pt-5 space-y-3">
           <div className="flex flex-col sm:flex-row gap-3">
             <a
-              href="/blood-point.apk"
-              download="blood-point.apk"
+              href="https://github.com/mahamadulhasanshaikat/blood_point_web/releases/download/v1.0.0/blood_point.apk"
+              target="_blank"
+              rel="noopener noreferrer"
               onClick={onClose}
-              className="flex-1 flex items-center justify-center gap-2 bg-linear-to-r from-red-600 to-rose-600 hover:from-red-700 hover:to-rose-700 text-white px-6 py-3.5 rounded-2xl font-bold text-sm transition-all duration-200 shadow-lg shadow-red-500/25 active:translate-y-0.5"
+              className="flex-1 flex items-center justify-center gap-2 bg-gradient-to-r from-red-600 to-rose-600 hover:from-red-700 hover:to-rose-700 text-white px-6 py-3.5 rounded-2xl font-bold text-sm transition-all duration-200 shadow-lg shadow-red-500/25 active:translate-y-0.5"
             >
               <Download className="w-4 h-4" />
               <span>সরাসরি APK ডাউনলোড করুন</span>
@@ -126,7 +130,7 @@ export default function DownloadModal({ isOpen, onClose }: DownloadModalProps) {
             
             <button
               onClick={onClose}
-              className="px-5 py-3.5 rounded-2xl font-semibold text-sm text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
+              className="px-5 py-3.5 rounded-2xl font-semibold text-sm text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors cursor-pointer"
             >
               বাতিল
             </button>
