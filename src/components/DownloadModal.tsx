@@ -61,7 +61,7 @@ export default function DownloadModal({ isOpen, onClose }: DownloadModalProps) {
         <div className="space-y-3">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold bg-rose-50 dark:bg-rose-950/50 border border-rose-200/60 dark:border-rose-900/50 text-red-600 dark:text-red-400">
             <span className="flex h-2 w-2 rounded-full bg-red-600 animate-ping" />
-            <span>অফিসিয়াল প্রি-রিলিজ বেটা টেস্টিং</span>
+            <span>অফিসিয়াল লেটেস্ট সংস্করণ</span>
           </div>
 
           <div className="flex items-center gap-3">
@@ -72,7 +72,9 @@ export default function DownloadModal({ isOpen, onClose }: DownloadModalProps) {
               <h3 className="text-xl font-extrabold text-slate-900 dark:text-white tracking-tight">
                 Blood Point Mobile App
               </h3>
-             
+              <p className="text-xs text-slate-500 dark:text-slate-400 font-mono">
+                Package: com.mhstechlabs.blood_point
+              </p>
             </div>
           </div>
         </div>
@@ -81,7 +83,7 @@ export default function DownloadModal({ isOpen, onClose }: DownloadModalProps) {
         <div className="grid grid-cols-3 gap-2.5 my-5">
           <div className="bg-slate-50 dark:bg-slate-800/60 border border-slate-100 dark:border-slate-800/80 p-3 rounded-2xl text-center">
             <span className="text-[10px] uppercase font-bold text-slate-400 block tracking-wider">ভার্সন</span>
-            <span className="text-xs font-bold text-slate-700 dark:text-slate-200">v1.0.0 (Beta)</span>
+            <span className="text-xs font-bold text-slate-700 dark:text-slate-200">Latest Build</span>
           </div>
           <div className="bg-slate-50 dark:bg-slate-800/60 border border-slate-100 dark:border-slate-800/80 p-3 rounded-2xl text-center flex flex-col items-center justify-center">
             <span className="text-[10px] uppercase font-bold text-slate-400 block tracking-wider">সাইজ</span>
@@ -112,15 +114,15 @@ export default function DownloadModal({ isOpen, onClose }: DownloadModalProps) {
           </ul>
         </div>
 
-        {/* সিকিউরিটি ব্যাজ ও ডাউনলোড অ্যাকশন বাটনসমূহ */}
+        {/* সিকিউরিটি ব্যাজ ও চিরস্থায়ী লেটেস্ট ডাউনলোড বাটন */}
         <div className="pt-5 space-y-3">
           <div className="flex flex-col sm:flex-row gap-3">
             <a
-              href="https://github.com/mahamadulhasanshaikat/blood_point_web/releases/download/v1.0.0/blood_point.apk"
+              href="https://github.com/mahamadulhasanshaikat/blood_point_web/releases/latest/download/blood_point.apk"
               target="_blank"
               rel="noopener noreferrer"
               onClick={onClose}
-              className="flex-1 flex items-center justify-center gap-2 bg-gradient-to-r from-red-600 to-rose-600 hover:from-red-700 hover:to-rose-700 text-white px-6 py-3.5 rounded-2xl font-bold text-sm transition-all duration-200 shadow-lg shadow-red-500/25 active:translate-y-0.5"
+              className="flex-1 flex items-center justify-center gap-2 bg-linear-to-r from-red-600 to-rose-600 hover:from-red-700 hover:to-rose-700 text-white px-6 py-3.5 rounded-2xl font-bold text-sm transition-all duration-200 shadow-lg shadow-red-500/25 active:translate-y-0.5"
             >
               <Download className="w-4 h-4" />
               <span>সরাসরি APK ডাউনলোড করুন</span>
