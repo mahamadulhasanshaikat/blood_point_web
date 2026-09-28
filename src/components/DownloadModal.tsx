@@ -89,7 +89,7 @@ export default function DownloadModal({ isOpen, onClose }: DownloadModalProps) {
             <span className="text-[10px] uppercase font-bold text-slate-400 block tracking-wider">সাইজ</span>
             <div className="flex items-center gap-1 text-xs font-bold text-slate-700 dark:text-slate-200">
               <HardDrive className="w-3 h-3 text-slate-400" />
-              <span>~60 MB</span>
+              <span>~60 MB+</span>
             </div>
           </div>
           <div className="bg-slate-50 dark:bg-slate-800/60 border border-slate-100 dark:border-slate-800/80 p-3 rounded-2xl text-center flex flex-col items-center justify-center">
@@ -118,7 +118,7 @@ export default function DownloadModal({ isOpen, onClose }: DownloadModalProps) {
         <div className="pt-5 space-y-3">
           <div className="flex flex-col sm:flex-row gap-3">
             <a
-              href="https://github.com/mahamadulhasanshaikat/blood_point_web/releases/latest/download/blood_point.apk"
+              href="https://github.com/mahamadulhasanshaikat/blood_point/releases/latest/download/app-release.apk"
               target="_blank"
               rel="noopener noreferrer"
               onClick={onClose}
