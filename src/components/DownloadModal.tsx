@@ -46,7 +46,7 @@ export default function DownloadModal({ isOpen, onClose }: DownloadModalProps) {
       <div className="relative w-full max-w-lg bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 rounded-3xl p-6 sm:p-8 shadow-2xl z-10 overflow-hidden animate-in zoom-in-95 duration-200">
         
         {/* টপ ব্যাকগ্রাউন্ড অ্যাম্বিয়েন্ট গ্লো */}
-        <div className="absolute top-0 right-0 -mr-16 -mt-16 w-48 h-48 bg-linear-to-br from-red-500/15 via-rose-500/10 to-transparent rounded-full blur-2xl pointer-events-none" />
+        <div className="absolute top-0 right-0 -mr-16 -mt-16 w-48 h-48 bg-gradient-to-br from-red-500/15 via-rose-500/10 to-transparent rounded-full blur-2xl pointer-events-none" />
 
         {/* ক্লোজ বাটন */}
         <button
@@ -89,7 +89,7 @@ export default function DownloadModal({ isOpen, onClose }: DownloadModalProps) {
             <span className="text-[10px] uppercase font-bold text-slate-400 block tracking-wider">সাইজ</span>
             <div className="flex items-center gap-1 text-xs font-bold text-slate-700 dark:text-slate-200">
               <HardDrive className="w-3 h-3 text-slate-400" />
-              <span>~60 MB+</span>
+              <span>~60 MB</span>
             </div>
           </div>
           <div className="bg-slate-50 dark:bg-slate-800/60 border border-slate-100 dark:border-slate-800/80 p-3 rounded-2xl text-center flex flex-col items-center justify-center">
@@ -114,15 +114,15 @@ export default function DownloadModal({ isOpen, onClose }: DownloadModalProps) {
           </ul>
         </div>
 
-        {/* সিকিউরিটি ব্যাজ ও চিরস্থায়ী লেটেস্ট ডাউনলোড বাটন */}
+        {/* চিরস্থায়ী লেটেস্ট ডাউনলোড বাটন */}
         <div className="pt-5 space-y-3">
           <div className="flex flex-col sm:flex-row gap-3">
             <a
-              href="https://github.com/mahamadulhasanshaikat/blood_point/releases/latest/download/app-release.apk"
+              href="https://github.com/mahamadulhasanshaikat/blood_point_web/releases/latest/download/blood_point.apk"
               target="_blank"
               rel="noopener noreferrer"
               onClick={onClose}
-              className="flex-1 flex items-center justify-center gap-2 bg-linear-to-r from-red-600 to-rose-600 hover:from-red-700 hover:to-rose-700 text-white px-6 py-3.5 rounded-2xl font-bold text-sm transition-all duration-200 shadow-lg shadow-red-500/25 active:translate-y-0.5"
+              className="flex-1 flex items-center justify-center gap-2 bg-gradient-to-r from-red-600 to-rose-600 hover:from-red-700 hover:to-rose-700 text-white px-6 py-3.5 rounded-2xl font-bold text-sm transition-all duration-200 shadow-lg shadow-red-500/25 active:translate-y-0.5"
             >
               <Download className="w-4 h-4" />
               <span>সরাসরি APK ডাউনলোড করুন</span>
