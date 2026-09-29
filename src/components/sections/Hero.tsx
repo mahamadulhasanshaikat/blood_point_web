@@ -8,7 +8,7 @@ import {
   ArrowRight,
   Download
 } from 'lucide-react';
-import DownloadModal from '../DownloadModal';
+import DownloadModal from './DownloadModal';
 
 export function Hero() {
   const [isDownloadOpen, setIsDownloadOpen] = useState(false);
@@ -89,60 +89,64 @@ export function Hero() {
             </div>
           </div>
 
-          {/* ================= ডান পাশ: ৩টি পারফেক্ট কনসেন্ট্রিক রিং অরবিট ================= */}
-          <div className="lg:col-span-6 flex justify-center items-center relative min-h-125 sm:min-h-140">
-            <div className="relative w-85 h-85 sm:w-125 sm:h-125 flex items-center justify-center select-none orbit-container">
+          {/* ================= ডান পাশ: ২টি ব্যালান্সড সাইজ অরবিট রিং ================= */}
+          <div className="lg:col-span-6 flex justify-center items-center relative min-h-110 sm:min-h-130">
+            {/* মেইন কন্টেইনার সাইজ halka boro: w-80 sm:w-112 */}
+            <div className="relative w-80 h-80 sm:w-112 sm:h-112 flex items-center justify-center select-none orbit-container">
 
-              {/* রিং ১ */}
+              {/* রিং ১ (বাইরের রিং) */}
               <div className="absolute inset-0 rounded-full border border-dashed border-red-200/80 pointer-events-none" />
               <div className="absolute inset-0 rounded-full orbit-layer animate-orbit-1">
+                {/* O+ */}
                 <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2">
-                  <div className="orbit-layer animate-anti-1 flex items-center justify-center w-12 h-12 rounded-full bg-linear-to-tr from-red-600 to-rose-500 text-white font-black text-sm shadow-xl shadow-red-500/40 border-2 border-white transition-all duration-300 hover:scale-125 cursor-pointer">
+                  <div className="orbit-layer animate-anti-1 flex items-center justify-center w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-linear-to-tr from-red-600 to-rose-500 text-white font-black text-xs sm:text-sm shadow-xl shadow-red-500/40 border-2 border-white transition-all duration-300 hover:scale-125 cursor-pointer">
                     O+
                   </div>
                 </div>
+                {/* O- */}
                 <div className="absolute top-1/2 right-0 translate-x-1/2 -translate-y-1/2">
-                  <div className="orbit-layer animate-anti-1 flex items-center justify-center w-11 h-11 rounded-full bg-slate-900 text-rose-400 font-black text-xs shadow-lg border-2 border-white transition-all duration-300 hover:scale-125 cursor-pointer">
+                  <div className="orbit-layer animate-anti-1 flex items-center justify-center w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-slate-900 text-rose-400 font-black text-xs shadow-lg border-2 border-white transition-all duration-300 hover:scale-125 cursor-pointer">
                     O-
                   </div>
                 </div>
-                <div className="absolute bottom-6 left-1/4 -translate-x-1/2">
-                  <div className="orbit-layer animate-anti-1 flex items-center justify-center w-11 h-11 rounded-full bg-white text-red-600 font-black text-xs shadow-lg border border-red-100 transition-all duration-300 hover:scale-125 cursor-pointer">
+                {/* A+ */}
+                <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2">
+                  <div className="orbit-layer animate-anti-1 flex items-center justify-center w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-white text-red-600 font-black text-xs shadow-lg border border-red-100 transition-all duration-300 hover:scale-125 cursor-pointer">
                     A+
                   </div>
                 </div>
-              </div>
-
-              {/* রিং ২ */}
-              <div className="absolute w-60 h-60 sm:w-85 sm:h-85 rounded-full border border-red-100 pointer-events-none" />
-              <div className="absolute w-60 h-60 sm:w-85 sm:h-85 rounded-full orbit-layer animate-orbit-2">
-                <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2">
-                  <div className="orbit-layer animate-anti-2 flex items-center justify-center w-11 h-11 rounded-full bg-white text-red-600 font-black text-xs shadow-md border border-rose-200 transition-all duration-300 hover:scale-125 cursor-pointer">
-                    B+
-                  </div>
-                </div>
-                <div className="absolute top-1/2 right-0 translate-x-1/2 -translate-y-1/2">
-                  <div className="orbit-layer animate-anti-2 flex items-center justify-center w-10 h-10 rounded-full bg-slate-950 text-white font-black text-xs shadow-md border border-slate-700 transition-all duration-300 hover:scale-125 cursor-pointer">
+                {/* A- */}
+                <div className="absolute top-1/2 left-0 -translate-x-1/2 -translate-y-1/2">
+                  <div className="orbit-layer animate-anti-1 flex items-center justify-center w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-slate-950 text-white font-black text-xs shadow-md border border-slate-700 transition-all duration-300 hover:scale-125 cursor-pointer">
                     A-
                   </div>
                 </div>
-                <div className="absolute bottom-2 left-1/4 -translate-x-1/2">
-                  <div className="orbit-layer animate-anti-2 flex items-center justify-center w-10 h-10 rounded-full bg-slate-950 text-white font-black text-xs shadow-md border border-slate-700 transition-all duration-300 hover:scale-125 cursor-pointer">
+              </div>
+
+              {/* রিং ২ (ভেতরের রিং - w-54 sm:w-74) */}
+              <div className="absolute w-54 h-54 sm:w-74 sm:h-74 rounded-full border border-dashed border-rose-300/60 pointer-events-none" />
+              <div className="absolute w-54 h-54 sm:w-74 sm:h-74 rounded-full orbit-layer animate-orbit-2">
+                {/* B+ */}
+                <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2">
+                  <div className="orbit-layer animate-anti-2 flex items-center justify-center w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-white text-red-600 font-black text-xs shadow-md border border-rose-200 transition-all duration-300 hover:scale-125 cursor-pointer">
+                    B+
+                  </div>
+                </div>
+                {/* B- */}
+                <div className="absolute top-1/2 right-0 translate-x-1/2 -translate-y-1/2">
+                  <div className="orbit-layer animate-anti-2 flex items-center justify-center w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-slate-950 text-white font-black text-xs shadow-md border border-slate-700 transition-all duration-300 hover:scale-125 cursor-pointer">
                     B-
                   </div>
                 </div>
-              </div>
-
-              {/* রিং ৩ */}
-              <div className="absolute w-35 h-35 sm:w-50 sm:h-50 rounded-full border border-dashed border-rose-300/60 pointer-events-none" />
-              <div className="absolute w-35 h-35 sm:w-50 sm:h-50 rounded-full orbit-layer animate-orbit-3">
-                <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2">
-                  <div className="orbit-layer animate-anti-3 flex items-center justify-center w-10 h-10 rounded-full bg-white text-rose-600 font-black text-[11px] shadow-md border border-rose-200 transition-all duration-300 hover:scale-125 cursor-pointer">
+                {/* AB+ */}
+                <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2">
+                  <div className="orbit-layer animate-anti-2 flex items-center justify-center w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-white text-rose-600 font-black text-xs shadow-md border border-rose-200 transition-all duration-300 hover:scale-125 cursor-pointer">
                     AB+
                   </div>
                 </div>
-                <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2">
-                  <div className="orbit-layer animate-anti-3 flex items-center justify-center w-9 h-9 rounded-full bg-slate-900 text-rose-300 font-black text-[10px] shadow-md border border-slate-800 transition-all duration-300 hover:scale-125 cursor-pointer">
+                {/* AB- */}
+                <div className="absolute top-1/2 left-0 -translate-x-1/2 -translate-y-1/2">
+                  <div className="orbit-layer animate-anti-2 flex items-center justify-center w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-slate-900 text-rose-300 font-black text-[11px] sm:text-xs shadow-md border border-slate-800 transition-all duration-300 hover:scale-125 cursor-pointer">
                     AB-
                   </div>
                 </div>
@@ -162,6 +166,7 @@ export function Hero() {
                   </span>
                 </div>
               </div>
+
             </div>
           </div>
 

@@ -137,7 +137,7 @@ export function LiveStats() {
     },
     {
       label: 'Districts Covered',
-      value: '64/64',
+      value: '64',
       subtext: 'Nationwide coverage',
       icon: MapPin,
       color: 'text-indigo-600 bg-indigo-50 border-indigo-100',
