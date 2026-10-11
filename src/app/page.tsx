@@ -5,6 +5,7 @@ import { Hero } from '@/components/sections/Hero';
 import { LiveStats } from '@/components/sections/LiveStats';
 import { Architecture } from '@/components/sections/Architecture';
 import { Vision } from '@/components/sections/Vision';
+import { LiveDonationFeed } from '@/components/sections/LiveDonations';
 
 export const metadata: Metadata = {
   title: 'Blood Point | Instant Voluntary Blood Donation Platform',
@@ -23,6 +24,7 @@ export default function HomePage() {
       <Navbar />
       <Hero />
       <LiveStats />
+      <LiveDonationFeed />
       <Architecture />
       <Vision />
       <Footer />
